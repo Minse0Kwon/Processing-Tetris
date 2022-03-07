@@ -37,6 +37,7 @@ class block {
   void down() {
     if (stopped()) {
       update();
+      game.clearLine();
       board.createBlock();
     }
   }

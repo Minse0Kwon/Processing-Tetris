@@ -22,7 +22,7 @@ class Board {
     }else if(blockIndicator==1){
       current = new TShape(this); // setting current to this new instance
     }
-    
+    //current = new sShape(this);
   }
 
   void rendering() {
@@ -41,4 +41,21 @@ class Board {
       y += size;
     }
   }
+  
+  boolean rowIsFull(){
+    for(int i = 0; i < cells.length - 1; i++){
+      if( cells[i][18] == emptyCell){
+        return false;
+      }
+    }
+    return true;
+  }
+  
+  void clearLine(){
+    if(rowIsFull()){
+      print("lineClear!");
+    }
+    
+  }
+  
 }
