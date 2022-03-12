@@ -11,21 +11,21 @@ class block {
   boolean stopped() {
     return false;
   }
-  
-  int idxToPixel(int a){
+
+  int idxToPixel(int a) {
     return a*board.size;
   }
 
-  void update(){
+  void update() {
   }
-  
+
   void rendering() {
     int x = 0;
     int y = 0;
     for (int i = 0; i < 4; i++) {
       for (int j = 0; j < 4; j++) {
         fill(blockContainer[j][i]);
-        if(blockContainer[j][i] == blockColor){
+        if (blockContainer[j][i] == blockColor) {
           x = (j+xCoord)*board.size;
           y = (i+yCoord)*board.size;
           square(x, y, board.size);
@@ -36,23 +36,28 @@ class block {
 
   void down() {
     if (stopped()) {
-      update();
-      game.clearLine();
-      board.createBlock();
+      if (yCoord <1) {
+        println("Your final score is: " + round(score*10) +"!");
+        exit();
+      } else {
+        update();
+        game.clearLine();
+        board.createBlock();
+      }
     }
   }
-  
-  boolean canRotate(){
+
+  boolean canRotate() {
     return true;
   }
-  
-  void Rotate(){
-    if(canRotate()){
+
+  void Rotate() {
+    if (canRotate()) {
       rotate += 1;
       rotate = rotate % 4;
     }
   }
-  
+
   void right() {
     xCoord += 1;
   }

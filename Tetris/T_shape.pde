@@ -8,16 +8,18 @@ class TShape extends block {
 
   boolean canRotate() {
     if (rotate == 1) {
-      try{
-      return board.cells[xCoord][yCoord] == game.emptyCell;
-      }catch( IndexOutOfBoundsException e ) {
+      try {
+        return board.cells[xCoord][yCoord] == game.emptyCell;
+      }
+      catch( IndexOutOfBoundsException e ) {
         return false;
       }
     }
     if (rotate == 3) {
-      try{
-      return board.cells[xCoord+3][yCoord] == game.emptyCell;
-      }catch( IndexOutOfBoundsException e ) {
+      try {
+        return board.cells[xCoord+3][yCoord] == game.emptyCell;
+      }
+      catch( IndexOutOfBoundsException e ) {
         return false;
       }
     }

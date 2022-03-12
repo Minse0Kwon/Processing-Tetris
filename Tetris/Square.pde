@@ -1,13 +1,13 @@
 class Square extends block {
 
   Square(Board Cells) {
-    blockColor = color(0,255,255);
+    blockColor = color(0, 255, 255);
     speed=1;
     board=Cells;
     InitBlock();
   }
-  
-  void InitBlock(){
+
+  void InitBlock() {
     blockContainer[0][0] = blockColor;
     blockContainer[1][0] = blockColor;
     blockContainer[0][1] = blockColor;
