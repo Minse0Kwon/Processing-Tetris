@@ -16,10 +16,10 @@ class Board {
   }
 
   void createBlock() {
-    int blockIndicator = round(random(0, 2)); // creates a new instance of a random shape
-    if (blockIndicator == 0) {
+    int blockIndicator = round(random(0.5, 3.5)); // creates a new instance of a random shape
+    if (blockIndicator == 1) {
       current = new Square(this); // setting current to this new instance
-    } else if (blockIndicator == 1) {
+    } else if (blockIndicator == 2) {
       current = new TShape(this); // setting current to this new instance
     } else {
       current = new Line(this);
@@ -59,7 +59,6 @@ class Board {
         for (int i = 0; i < cells.length - 1; i++) { // clear the row that is full
           cells[i][rowNum] = emptyCell;
         }
-
         for (int i = 0; i < cells.length - 1; i++) { // moving all cells above the row that is full down 1 cell;
           for (int j = rowNum - 1; j > 1; j--) {
             cells[i][j+1] = cells[i][j];

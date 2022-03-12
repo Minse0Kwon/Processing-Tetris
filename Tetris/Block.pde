@@ -41,6 +41,7 @@ class block {
         exit();
       } else {
         update();
+        delay(10);
         game.clearLine();
         board.createBlock();
       }
